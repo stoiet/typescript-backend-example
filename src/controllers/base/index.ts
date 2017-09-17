@@ -1,4 +1,5 @@
-import { Context, Middleware } from 'koa';
+import { Context } from '../../models/context';
+import { Middleware } from 'koa';
 
 export class BaseAction {
 

@@ -1,7 +1,8 @@
 import { Action } from '../../../decorators/action';
 import { compileFile, compileTemplate } from 'pug';
-import { Context, Response } from 'koa';
+import { Context } from '../../../models/context';
 import { BaseAction } from '../../base';
+import { Response } from 'koa';
 import { resolve } from 'path';
 
 @Action({

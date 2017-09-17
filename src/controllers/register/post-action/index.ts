@@ -1,6 +1,6 @@
 import { Action } from '../../../decorators/action';
+import { Context } from '../../../models/context';
 import { BaseAction } from '../../base';
-import { Context } from 'koa';
 
 @Action({
   method: 'POST',

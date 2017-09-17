@@ -1,5 +1,5 @@
+import { Context } from '../../models/context';
 import { router } from '../../lib/router';
-import { Context } from 'koa';
 
 export interface ActionParameters {
   method: string;

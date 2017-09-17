@@ -1,5 +1,6 @@
 import { createServer as createHTTPServer } from 'http';
 import { ApplicationConfig } from '../../config';
+import { Context } from '../../models/context';
 import { Server } from 'net';
 
 import * as KoaRouter from 'koa-router';
@@ -17,6 +18,7 @@ export class Application {
 
 
   public setOptions({ proxy = false, silent = false } = {}): Application {
+    (this._applicationInstance.context as Context).config = this._config;
     this._applicationInstance.env = this._config.NODE_ENV;
     this._applicationInstance.proxy = proxy;
     this._applicationInstance.silent = silent;

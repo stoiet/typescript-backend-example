@@ -1,14 +1,11 @@
-import './source-map-support';
+import './lib/source-map-support';
 
 import { Application } from './lib/application';
 import { middleware as bodyParserMiddleware } from './lib/body-parser';
+import { router } from './lib/router';
 import { config } from './config';
 
-import * as KoaRouter from 'koa-router';
-
 const application = new Application(config);
-
-const router = new KoaRouter();
 
 router.get('/', async ({ response }) => {
   response.body = { success: true };
@@ -16,7 +13,7 @@ router.get('/', async ({ response }) => {
 });
 
 application
-  .setupOptions({ proxy: false, silent: false })
-  .setupMiddleware(bodyParserMiddleware)
-  .setupRouting(router)
+  .setOptions({ proxy: false, silent: false })
+  .addMiddleware(bodyParserMiddleware)
+  .setRouting(router)
   .start();

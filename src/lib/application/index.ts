@@ -16,7 +16,7 @@ export class Application {
   }
 
 
-  public setupOptions({ proxy = false, silent = false } = {}): Application {
+  public setOptions({ proxy = false, silent = false } = {}): Application {
     this._applicationInstance.env = this._config.NODE_ENV;
     this._applicationInstance.proxy = proxy;
     this._applicationInstance.silent = silent;
@@ -24,16 +24,17 @@ export class Application {
   }
 
 
-  public setupMiddleware(middleware: Koa.Middleware): Application {
+  public addMiddleware(middleware: Koa.Middleware): Application {
     this._applicationInstance.use(middleware);
     return this;
   }
 
 
-  public setupRouting(router: KoaRouter): Application {
+  public setRouting(router: KoaRouter): Application {
     this._applicationInstance
-      .use(router.routes())
-      .use(router.allowedMethods());
+      .use(router.allowedMethods())
+      .use(router.routes());
+
     return this;
   }
 

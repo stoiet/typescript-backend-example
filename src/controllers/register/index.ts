@@ -1,2 +1,2 @@
-export * from './get.action';
-export * from './post.action';
+export * from './get-action';
+export * from './post-action';

@@ -1,12 +1,12 @@
-import { ActionFactory } from '../../decorators/action-factory';
-import { BaseAction } from '../base';
+import { Action } from '../../../decorators/action';
+import { BaseAction } from '../../base';
 import { Context } from 'koa';
 
-@ActionFactory({
-  method: 'GET',
+@Action({
+  method: 'POST',
   path: '/register'
 })
-export class RegisterControllerGetAction extends BaseAction {
+export class RegisterControllerPostAction extends BaseAction {
 
   constructor(context: Context) {
     super(context);

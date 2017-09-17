@@ -6,10 +6,10 @@ export interface ActionParameters {
   path: string;
 }
 
-export function ActionFactory({ method, path }: ActionParameters) {
+export const Action = ({ method, path }: ActionParameters) => {
   return (Target: any) => {
     return (router as any)[`${method.toLowerCase()}`](path, ...Target.middlewares, async (context: Context) => {
       return await (new Target(context)).execute();
     });
   };
-}
+};

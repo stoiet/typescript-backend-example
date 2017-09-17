@@ -5,5 +5,5 @@
   "main": "dist/index.js",
   "scripts": {},
   "author": "Robert Beretka <to.stoiet@gmail.com>",
-  "license": "ISC"
+  "license": "MIT"
 }

@@ -24,7 +24,7 @@
     "outDir": "./dist",
     "pretty": true,
     "removeComments": true,
-    "rootDir": "./",
+    "rootDir": "./src",
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
@@ -35,6 +35,7 @@
   ],
   "exclude": [
     "test",
+    "dist",
     "node_modules",
     "**/*.spec.ts"
   ]

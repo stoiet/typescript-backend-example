@@ -1,4 +1,7 @@
 {
   "extends": "tslint:recommended",
-  "rules": {}
+  "rules": {
+    "trailing-comma": [true, { "additionalProperties": false }],
+    "object-literal-sort-keys": [false]
+  }
 }

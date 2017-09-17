@@ -4,19 +4,23 @@
   "description": "NodeJS TypeScript Backend Example",
   "main": "dist/index.js",
   "scripts": {
+    "start": "npm run build && node ./dist/index.js",
     "build": "rm -rf dist && tsc --project ./tsconfig.json",
     "code:style": "tslint --config ./tslint.json --format stylish --type-check --project ./tsconfig.json"
   },
   "author": "Robert Beretka <to.stoiet@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "koa": "2.3.0"
+  },
   "devDependencies": {
+    "@types/koa": "2.0.39",
     "tslib": "1.7.1",
     "tslint": "5.7.0",
     "typescript": "2.5.2"
   },
-  "engines" : {
+  "engines": {
     "node": "8.5.0",
-    "npm" : "5.4.2"
+    "npm": "5.4.2"
   }
 }

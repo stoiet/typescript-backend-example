@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "NodeJS TypeScript Backend Example",
   "main": "dist/index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "rm -rf dist && tsc --project ./tsconfig.json"
+  },
   "author": "Robert Beretka <to.stoiet@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "tslib": "1.7.1",
+    "typescript": "2.5.2"
+  }
 }

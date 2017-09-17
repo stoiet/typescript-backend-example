@@ -2,10 +2,11 @@ import { ActionFactory } from '../../decorators/action-factory';
 import { BaseAction } from '../base';
 import { Context } from 'koa';
 
-@ActionFactory({ method: 'GET', path: '/' })
+@ActionFactory({
+  method: 'GET',
+  path: '/register'
+})
 export class RegisterControllerGetAction extends BaseAction {
-
-  protected _context: Context;
 
   constructor(context: Context) {
     super(context);

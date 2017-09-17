@@ -1,6 +1,13 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "radix": [false],
+    "ordered-imports": [false],
+    "no-consecutive-blank-lines": [false],
+    "no-console": [false],
+    "allow-parens": [false],
+    "variable-name": [true, "allow-leading-underscore"],
+    "interface-name": [false],
     "quotemark": [true, "single"],
     "trailing-comma": [true, { "additionalProperties": false }],
     "object-literal-sort-keys": [false]

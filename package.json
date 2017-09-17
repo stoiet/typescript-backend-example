@@ -1,0 +1,9 @@
+{
+  "name": "typescript-backend-example",
+  "version": "1.0.0",
+  "description": "NodeJS TypeScript Backend Example",
+  "main": "dist/index.js",
+  "scripts": {},
+  "author": "Robert Beretka <to.stoiet@gmail.com>",
+  "license": "ISC"
+}

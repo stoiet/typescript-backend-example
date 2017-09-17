@@ -20,9 +20,8 @@ export class RegisterControllerGetAction extends BaseAction {
   }
 
   public async execute() {
-    this._response.body = this._render({ text: 'Hello World!' });
+    this._response.body = this._render();
     this._response.status = 200;
-    return {};
   }
 
 }

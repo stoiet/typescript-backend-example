@@ -5,9 +5,12 @@ import { createServer as createHTTPServer } from 'http';
 import { config } from './config';
 
 import * as bodyParser from 'koa-bodyparser';
+import * as KoaRouter from 'koa-router';
 import * as Koa from 'koa';
 
 const application = new Koa();
+const router = new KoaRouter();
+
 application.env = config.NODE_ENV;
 application.proxy = false;
 application.silent = false;
@@ -22,11 +25,16 @@ application.use(bodyParser({
   }
 }));
 
-application.use(async ({ response }) => {
+router.get('/', async ({ response }) => {
   console.info('Request arrived!');
   response.body = { success: true };
   response.status = 200;
 });
+
+
+application
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 application.on('error', error => {
   console.error('Server error: ', error);

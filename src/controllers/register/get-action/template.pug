@@ -4,6 +4,9 @@ html(lang="en")
     meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
     title Register Page
     script.
-      var config = { token: "#{token}" };
+      var config = {
+        token: "#{token}",
+        clientHost: "#{clientHost}",
+      };
   body
     div#application

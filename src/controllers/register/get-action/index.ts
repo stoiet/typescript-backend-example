@@ -13,19 +13,31 @@ import { resolve } from 'path';
 export class RegisterControllerGetAction extends BaseAction {
 
   private _response: Response;
+  private _config: any;
   private _render: compileTemplate;
   private _token: Token;
 
   constructor(context: Context) {
     super(context);
     this._response = context.response;
+    this._config = context.config;
     this._render = compileFile(resolve(__dirname, './template.pug'));
     this._token = new Token(context.config);
   }
 
+
   public async execute() {
-    this._response.body = this._render({ token: this._token.sign() });
+    const params = this._getRenderParams();
+    this._response.body = this._render(params);
     this._response.status = 200;
+  }
+
+
+  private _getRenderParams() {
+    return {
+      token: this._token.sign(),
+      clientHost: this._context.config.CLIENT_HOST
+    };
   }
 
 }
